@@ -6,6 +6,7 @@ import {
   BrowserRouter as Router,
 } from 'react-router-dom';
 import List from './components/List.js'
+// import Home from './components/Home.js';
 
 
 
@@ -26,7 +27,7 @@ export default class App extends Component {
           </Switch>
         </Router>
       
-    )
+    );
   }
 }
 
