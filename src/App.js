@@ -16,7 +16,8 @@ export default class App extends Component {
       
         <Router>
           {/* <Link to='/'>HomePage </Link> */}
-          <Link to='/list'>Weed</Link>
+          
+          
           <Switch>
             {/* this is your home route */}
 

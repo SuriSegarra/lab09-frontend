@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import request from 'superagent';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import WeedItem from './WeedItem.js';
 
 
@@ -23,13 +23,17 @@ export default class List extends Component {
 
     render() {
         return (
-           <ul id='weed-list'>
+            <div>
+                <h1 className='list-h1'>Products</h1>
+             <ul id='weed-list'>
                {
                    this.state.weed.map(weed =>
                     <WeedItem weed={weed}/>
                    )
                }
            </ul>
+
+            </div>
         );
     }
 }

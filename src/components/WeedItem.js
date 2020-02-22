@@ -4,6 +4,7 @@ export default class weedItem extends Component {
     render() {
         const { weed } = this.props;
         return (
+        <div className='card-item'>
             <li className='weed-item'> 
                 <h2 className='strain'> {weed.strain}</h2>
                 <img src={weed.imgurl} alt=''/>
@@ -11,6 +12,8 @@ export default class weedItem extends Component {
                 <p> THC: {weed.thc} %</p>
                 
             </li>
+
+        </div>
         )
     }
 }
