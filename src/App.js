@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {
   Route, 
   Switch,
-  Link,
   BrowserRouter as Router,
 } from 'react-router-dom';
 import List from './components/List.js'

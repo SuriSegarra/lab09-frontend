@@ -43,12 +43,12 @@ export default class Createweed extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         const NewWeed = {
-            strain: this.state.name,
+            strain: this.state.strain,
             indoor: this.state.indoor,
-            outdoor: this.state.outdoot,
+            outdoor: this.state.outdoor,
             smell: this.state.smell,
-            imgUrl: this.state.image,
-            type: this.state.type,
+            imgUrl: this.state.imgUrl,
+            typeId: this.state.type,
             thc: this.state.thc,
 
         }
@@ -86,16 +86,20 @@ export default class Createweed extends Component {
                         <label>
                             Indoor:
                             <select onChange={this.handleIndoor}>
-                                <option valie='true'>True</option>
+                                <option value='true'>True</option>
                                 <option value='false'>False</option>
                             </select>
                         </label>
                         <label>
                             Outdoor:
                             <select onChange={this.handleOutDoor}>
-                                <option valie='true'>True</option>
+                                <option value='true'>True</option>
                                 <option value='false'>False</option>
                             </select>
+                        </label>
+                        <label>
+                            Smell
+                            <input onChange={this.handleSmellChange}></input>
                         </label>
                         <button>Submit</button>
                 </form>
