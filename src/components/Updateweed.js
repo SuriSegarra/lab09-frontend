@@ -1,26 +1,36 @@
 import React, { Component } from 'react'
 import request from 'superagent';
-export default class Createweed extends Component {
+export default class Updateweed extends Component {
     state = {
         types: [],
-        inddor: false,
-        outdoor: true,
-        type: 1,
     };
-    componentDidMount = async () => {
-        const types = await request.get('https://weed-fullstack-lab.herokuapp.com/api/type')
+componentDidMount = async () => {
+    const types = await request.get(`https://weed-fullstack-lab.herokuapp.com/api/type`)
 
-        this.setState({types: types.body});
-    }
+    this.setState({ types: types.body })
+    
+    const weed = await request.get(`https://weed-fullstack-lab.herokuapp.com/api/weed/${this.props.match.params.id}`)
+
+    const weedToUpdate = weed.body[0];
+console.log(weedToUpdate);
+    this.setState({
+        strain: weedToUpdate.strain,
+        indoor: weedToUpdate.indoor,
+        outdoor: weedToUpdate.outdoor,
+        thc: weedToUpdate.thc,
+        imgUrl: weedToUpdate.imgurl,
+        type: weedToUpdate.type_id, 
+        smell: weedToUpdate.smell
+    });
+}
     handleNameChange = (e) => {
-        this.setState({ strain: e.target.value})
+        this.setState({ strain: e.target.value })
     }
     handleTypeChange = (e) => {
-        console.log(e.target.value)
         this.setState({ type: Number(e.target.value) })
     }
     handleSmellChange = (e) => {
-        this.setState({ smell: e.target.value})
+        this.setState({ smell: e.target.value })
     }
     handleTHCChange = (e) => {
         this.setState({thc: Number(e.target.value)} )
@@ -40,28 +50,34 @@ export default class Createweed extends Component {
     handleImageChange = (e) =>{
         this.setState({ imgUrl: e.target.value })
     }
+    handleDelete = async () => {
+        await request.delete(`https://weed-fullstack-lab.herokuapp.com/api/weed/${this.props.match.params.id}`)
+
+        this.props.history.push('/');
+    }
     handleSubmit = async (e) => {
-        e.preventDefault();
-        const NewWeed = {
+        e.preventdefault();
+
+        const newWeed = {
             strain: this.state.strain,
             indoor: this.state.indoor,
             outdoor: this.state.outdoor,
             smell: this.state.smell,
             imgUrl: this.state.imgUrl,
-            typeId: this.state.type,
+            type: this.state.type,
             thc: this.state.thc,
-
         }
-        const dbWeed = await request.put('https://weed-fullstack-lab.herokuapp.com/api/weed', NewWeed)
+        const dbWeed = await request.put(`https://weed-fullstack-lab.herokuapp.com/api/weed`, newWeed);
 
         console.log(dbWeed)
+
         this.props.history.push('/');
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                 <form onSubmit={this.handleSubmit}>
                     Add Product
                     <label>
                         Name:
@@ -103,6 +119,9 @@ export default class Createweed extends Component {
                         </label>
                         <button>Submit</button>
                 </form>
+
+                <button onClick={ this.handleDelete}
+                style={{background:'red', marginTop:100}}>DELETE</button>
             </div>
         )
     }
