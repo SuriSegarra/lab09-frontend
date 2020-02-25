@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/lab09-frontend/static/css/main.2156e697.chunk.css",
+    "main.js": "/lab09-frontend/static/js/main.13bdec10.chunk.js",
+    "main.js.map": "/lab09-frontend/static/js/main.13bdec10.chunk.js.map",
+    "runtime-main.js": "/lab09-frontend/static/js/runtime-main.84996341.js",
+    "runtime-main.js.map": "/lab09-frontend/static/js/runtime-main.84996341.js.map",
+    "static/js/2.57f3a995.chunk.js": "/lab09-frontend/static/js/2.57f3a995.chunk.js",
+    "static/js/2.57f3a995.chunk.js.map": "/lab09-frontend/static/js/2.57f3a995.chunk.js.map",
+    "index.html": "/lab09-frontend/index.html",
+    "precache-manifest.9fab58c482717827878c44c693ee75a5.js": "/lab09-frontend/precache-manifest.9fab58c482717827878c44c693ee75a5.js",
+    "service-worker.js": "/lab09-frontend/service-worker.js",
+    "static/css/main.2156e697.chunk.css.map": "/lab09-frontend/static/css/main.2156e697.chunk.css.map",
+    "static/js/2.57f3a995.chunk.js.LICENSE.txt": "/lab09-frontend/static/js/2.57f3a995.chunk.js.LICENSE.txt",
+    "static/media/logo1.png": "/lab09-frontend/static/media/logo1.2b5d84cd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84996341.js",
+    "static/js/2.57f3a995.chunk.js",
+    "static/css/main.2156e697.chunk.css",
+    "static/js/main.13bdec10.chunk.js"
+  ]
+}
