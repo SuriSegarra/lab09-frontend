@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import request from 'superagent';
+
+
 export default class Updateweed extends Component {
     state = {
         types: [],
@@ -12,7 +14,7 @@ componentDidMount = async () => {
     const weed = await request.get(`https://weed-fullstack-lab.herokuapp.com/api/weed/${this.props.match.params.id}`)
 
     const weedToUpdate = weed.body[0];
-    console.log(weedToUpdate);
+
     this.setState({
         strain: weedToUpdate.strain,
         indoor: weedToUpdate.indoor,
@@ -22,7 +24,7 @@ componentDidMount = async () => {
         type_id: weedToUpdate.type_id, 
         smell: weedToUpdate.smell
     });
-    console.log(this.props.match.params.id);
+
 }
     handleNameChange = (e) => {
         this.setState({ strain: e.target.value })
@@ -60,7 +62,7 @@ componentDidMount = async () => {
     handleSubmit = async (e) => {
         
         e.preventDefault();
-console.log('something');
+
         const newWeed = {
             strain: this.state.strain,
             indoor: this.state.indoor,
