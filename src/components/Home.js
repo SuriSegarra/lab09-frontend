@@ -9,9 +9,9 @@ export default class Home extends Component {
         return (
             <div>
                 <Link className='weed-link' to='/list'>Products</Link>
-                <h1>The Coughy Shop</h1>
+                <h1></h1>
              <img className='home-img' src={myImage} alt=''/>
-            
+             
             </div>
         );
     }
