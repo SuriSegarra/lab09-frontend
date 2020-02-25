@@ -12,16 +12,17 @@ componentDidMount = async () => {
     const weed = await request.get(`https://weed-fullstack-lab.herokuapp.com/api/weed/${this.props.match.params.id}`)
 
     const weedToUpdate = weed.body[0];
-console.log(weedToUpdate);
+    console.log(weedToUpdate);
     this.setState({
         strain: weedToUpdate.strain,
         indoor: weedToUpdate.indoor,
         outdoor: weedToUpdate.outdoor,
         thc: weedToUpdate.thc,
         imgUrl: weedToUpdate.imgurl,
-        type: weedToUpdate.type_id, 
+        type_id: weedToUpdate.type_id, 
         smell: weedToUpdate.smell
     });
+    console.log(this.props.match.params.id);
 }
     handleNameChange = (e) => {
         this.setState({ strain: e.target.value })
@@ -55,17 +56,21 @@ console.log(weedToUpdate);
 
         this.props.history.push('/');
     }
+    
     handleSubmit = async (e) => {
-        e.preventdefault();
-
+        
+        e.preventDefault();
+console.log('something');
         const newWeed = {
             strain: this.state.strain,
             indoor: this.state.indoor,
             outdoor: this.state.outdoor,
             smell: this.state.smell,
             imgUrl: this.state.imgUrl,
-            type: this.state.type,
+            type_id: this.state.type_id,
             thc: this.state.thc,
+            id: Number(this.props.match.params.id),
+        
         }
         const dbWeed = await request.put(`https://weed-fullstack-lab.herokuapp.com/api/weed`, newWeed);
 
