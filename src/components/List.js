@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import WeedItem from './WeedItem.js';
 
 
-const getWeedList = () => request.get(`http://weed-fullstack-lab.herokuapp.com/api/weed`);
+const getWeedList = () => request.get(`https://weed-fullstack-lab.herokuapp.com/api/weed`);
 
 export default class List extends Component {
 
@@ -13,6 +13,7 @@ export default class List extends Component {
     }
 
     async componentDidMount() {
+        console.log('hmmm')
         const data = await getWeedList()
         console.log(data.body);
         this.setState({
