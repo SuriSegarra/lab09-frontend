@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import request from 'superagent';
 import WeedItem from './WeedItem.js';
-
+import { Link } from 'react-router-dom';
+import Updateweed from './Updateweed.js';
 // const getWeed = (weedId) => request.get(`https://weed-fullstack-lab.herokuapp.com/api/weed/?${weedId}`);
 
 
@@ -27,6 +28,8 @@ export default class Detail extends Component {
         return (
             <div className='weed-detail-div'>
                <WeedItem weed={ weed } />
+               <Link to={`/update/${weed.id}`}>Update</Link>
+               
             </div>
         )
     }

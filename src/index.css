@@ -15,7 +15,7 @@
 }
 h1{
   position: relative;
-  left: 39%;
+  text-align: center;
 }
 .weed-link{
   top: 10px;
@@ -37,7 +37,7 @@ li{
   border: solid 1px black;
   margin: 20px;
   font-size: 20px;
-  height: 350px;
+  height: 436px;
   border-radius: 5px;
 }
 li:hover{
@@ -54,4 +54,6 @@ ul{
   
   display: inline-block;
 }
-
+h2{
+text-align: center;
+}
